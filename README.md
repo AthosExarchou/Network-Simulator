@@ -1,26 +1,30 @@
-# Network Simulator 2 (NS-2): Network Performance Analysis
+# Network Performance Analysis and Toll Booth Simulation
 
-This repository contains the source code, configuration files, and simulation reports for two exercises completed using Network Simulator 2 (NS-2) for the
-**Computer Networks** course at [Harokopio University of Athens – Dept. of Informatics and Telematics](https://www.dit.hua.gr).\
-The exercises explore fundamental networking concepts such as data transmission rates, channel utilization, packet loss, and the behavior of different queuing mechanisms.
+This repository is a collection of academic projects completed for the [**Department of Informatics and Telematics**](https://www.dit.hua.gr) at **Harokopio University of Athens**.
+
+It features:
+1. **Network Simulations (NS-2) for the Computer Networks Course:** Source code, configuration files, and detailed reports for two exercises focusing on fundamental networking performance, including **data transmission rates, channel utilization, packet loss, and the comparative behavior of different queuing mechanisms** (DropTail vs. SFQ).
+2. **Simulation Course Report (CLOUDES):** A separate document analyzing the operational metrics and scenarios of a **Toll Booth System**.
 
 ## Project Structure
 
-The project is organized into two main directories, one for each exercise, along with the final reports:
+The project is organized to separate the NS-2 exercises from the standalone simulation report:
 
 ```text
 network-simulator/
 ├── exercise1/
-│   ├── exercise1.tcl        # TCL script for the simple two-node network
-│   └── out.tr               # Trace file showing bandwidth over time (used for Xgraph)
+│   ├── exercise1.tcl                    # TCL script for the simple two-node network
+│   └── out.tr                           # Trace file showing bandwidth over time (used for Xgraph)
 ├── exercise2/
-│   ├── exercise2.tcl        # TCL script for the multi-flow, queuing discipline network
-│   ├── out.nam              # Network Animator file for visual simulation of packet flow/loss
-│   ├── out0.tr              # Trace file for Flow 0 (Blue) bandwidth (used for Xgraph)
-│   └── out1.tr              # Trace file for Flow 1 (Red) bandwidth (used for Xgraph)
-├── exercise1_report_el.pdf  # Detailed report and analysis for Exercise 1
-├── exercise2_report_el.pdf  # Detailed report and analysis for Exercise 2
-└── README.md                # Project documentation, setup instructions, and key findings summary
+│   ├── exercise2.tcl                    # TCL script for the multi-flow, queuing discipline network
+│   ├── out.nam                          # Network Animator file for visual simulation of packet flow/loss
+│   ├── out0.tr                          # Trace file for Flow 0 (Blue) bandwidth (used for Xgraph)
+│   └── out1.tr                          # Trace file for Flow 1 (Red) bandwidth (used for Xgraph)
+├── simulation-cloudes/
+│   └── simulation-report_el-cloudes.pdf # Report and analysis for the Toll Booth simulation project
+├── exercise1_report_el.pdf              # Detailed report and analysis for Exercise 1
+├── exercise2_report_el.pdf              # Detailed report and analysis for Exercise 2
+└── README.md                            # Project documentation, setup instructions, key findings
 ```
 
 ## Exercise 1: Simple Two-Node Network Analysis
@@ -76,6 +80,20 @@ The numerical analysis for an intermediate simulation (presumably with DropTail 
 - **Blue Loss Percentage**: ≈50.4% 
 - **Red Loss Percentage**: 0% 
 
+# Simulation Project: Toll Booth Operation Analysis (CLOUDES) 
+
+This section contains a simulation project report for the separate **Simulation** course, focusing on the operational analysis of a toll booth system using the CLOUDES software. The simulation explores three different operating scenarios involving cars and motorcycles.
+
+## Key Findings by Scenario (simulation-report_el-cloudes.pdf)
+
+| Scenario       | Key Observation                                                                                      | Data Points                                                                                               |
+|----------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Scenario 1** | Manned and E-Pass queues had zero average wait time. The average exit count was ≈1,071.6 vehicles.   | Manned Utilization: 26.67%. E-Pass Utilization: 15.4%                                                     |
+| **Scenario 2** | The Manned queues maintained a 0 minute wait time, while the E-Pass queue increased to 1.77 minutes. | Manned Utilization (per booth): 11.7%. E-Pass Utilization: 30.2%.                                         |
+| **Scenario 3** | Showed a significant increase in car arrivals (+21.57% ) compared to Scenario 1.                     | Total Revenue: ≈3,699.73 € (Highest of the three scenarios). Average Time In System was slightly reduced. |
+
+The full analysis, including detailed revenue calculations and utilization metrics for each of the three scenarios, is available in the `simulation-report_el-cloudes.pdf` file located in the `simulation-cloudes/` directory.
+
 ## How to Run the Simulations
 
 To run these simulations, you must have **NS-2** installed on your system.
@@ -93,7 +111,7 @@ To run these simulations, you must have **NS-2** installed on your system.
     # Use xgraph out.tr to visualize the bandwidth trace
     ```
 
-3. Run Exercise 1:
+3. Run Exercise 2:
     ```bash
     cd exercise2
     ns exercise2.tcl
