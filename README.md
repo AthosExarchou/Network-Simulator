@@ -1,6 +1,6 @@
 # Network Performance Analysis and Toll Booth Simulation
 
-This repository is a collection of academic projects completed for the [**Department of Informatics and Telematics**](https://www.dit.hua.gr) at **Harokopio University of Athens**.
+This repository is a collection of academic projects completed for the [Department of Informatics and Telematics](https://dit.hua.gr) at Harokopio University of Athens.
 
 It features:
 1. **Network Simulations (NS-2) for the Computer Networks Course:** Source code, configuration files, and detailed reports for two exercises focusing on fundamental networking performance, including **data transmission rates, channel utilization, packet loss, and the comparative behavior of different queuing mechanisms** (DropTail vs. SFQ).
